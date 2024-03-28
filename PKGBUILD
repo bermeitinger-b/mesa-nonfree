@@ -9,13 +9,13 @@ pkgname=(
   'vulkan-mesa-layers'
   'opencl-clover-mesa'
   'opencl-rusticl-mesa'
-#  'vulkan-intel'
-#  'vulkan-nouveau'
+  #  'vulkan-intel'
+  #  'vulkan-nouveau'
   'vulkan-radeon'
-#  'vulkan-swrast'
-#  'vulkan-virtio'
+  #  'vulkan-swrast'
+  #  'vulkan-virtio'
   'libva-mesa-driver'
-#  'mesa-vdpau'
+  #  'mesa-vdpau'
   'mesa'
 )
 pkgver=24.0.4
@@ -92,10 +92,10 @@ validpgpkeys=(
 
 # Rust crates for NVK, used as Meson subprojects
 declare -A _crates=(
-   proc-macro2    1.0.70
-   quote          1.0.33
-   syn            2.0.39
-   unicode-ident  1.0.12
+   proc-macro2 1.0.70
+   quote 1.0.33
+   syn 2.0.39
+   unicode-ident 1.0.12
 )
 
 for _crate in "${!_crates[@]}"; do
@@ -487,7 +487,7 @@ package_mesa() {
   _install fakeinstall/$_libdir/d3d
   _install fakeinstall/$_libdir/lib{gbm,glapi}.so*
   _install fakeinstall/$_libdir/libOSMesa.so*
-#  _install fakeinstall/$_libdir/libxatracker.so*
+  #  _install fakeinstall/$_libdir/libxatracker.so*
 
   _install fakeinstall/usr/include
   _install fakeinstall/$_libdir/pkgconfig

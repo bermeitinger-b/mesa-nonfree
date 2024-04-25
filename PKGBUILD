@@ -145,7 +145,6 @@ build() {
     -D glvnd=true
     -D glx=dri
     -D intel-clc=disabled
-    -D intel-xe-kmd=disabled
     -D libunwind=disabled
     -D llvm=enabled
     -D lmsensors=enabled

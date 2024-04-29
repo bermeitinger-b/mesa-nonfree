@@ -3,7 +3,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
-
 pkgbase=mesa
 pkgname=(
   'vulkan-mesa-layers'
@@ -19,8 +18,8 @@ pkgname=(
   'mesa'
 )
 pkgver=24.0.6
-pkgrel=1
-epoch=10
+pkgrel=2
+epoch=1
 pkgdesc="Open-source OpenGL drivers"
 url="https://www.mesa3d.org/"
 arch=('x86_64')
@@ -64,6 +63,7 @@ makedepends=(
   'libclc'
   'meson'
   'python-mako'
+  'python-packaging'
   'python-ply'
   'rust-bindgen'
   #'wayland-protocols'

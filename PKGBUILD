@@ -19,7 +19,7 @@ pkgname=(
 )
 pkgver=24.0.7
 pkgrel=3
-epoch=1
+epoch=10
 pkgdesc="Open-source OpenGL drivers"
 url="https://www.mesa3d.org/"
 arch=('x86_64')
@@ -132,9 +132,15 @@ build() {
   local meson_options=(
     -D android-libbacktrace=disabled
     -D b_ndebug=true
-    -D dri3=enabled
-    -D egl=enabled
     -D gallium-drivers=radeonsi,swrast,zink
+    -D gallium-extra-hud=true
+    -D gallium-nine=true
+    -D gallium-omx=bellagio
+    -D gallium-opencl=icd
+    -D gallium-rusticl=true
+    -D gallium-vdpau=disabled
+    -D gallium-xa=disabled
+    -D gbm=disabled
     -D gles1=disabled
     -D glvnd=true
     -D glx=dri
@@ -143,7 +149,6 @@ build() {
     -D microsoft-clc=disabled
     -D osmesa=true
     -D platforms=x11
-    -D shared-glapi=enabled
     -D valgrind=disabled
     -D video-codecs=all
     -D vulkan-drivers=amd
@@ -477,7 +482,7 @@ package_mesa() {
 
   _install fakeinstall/$_libdir/bellagio
   _install fakeinstall/$_libdir/d3d
-  _install fakeinstall/$_libdir/lib{gbm,glapi}.so*
+  _install fakeinstall/$_libdir/libglapi.so*
   _install fakeinstall/$_libdir/libOSMesa.so*
   #  _install fakeinstall/$_libdir/libxatracker.so*
 

@@ -50,7 +50,6 @@ makedepends=(
   'spirv-tools'
   'systemd-libs'
   'vulkan-icd-loader'
-  #'wayland'
   'xcb-util-keysyms'
   'zlib'
   'zstd'
@@ -66,7 +65,6 @@ makedepends=(
   'python-packaging'
   'python-ply'
   'rust-bindgen'
-  #'wayland-protocols'
   'xorgproto'
 
   # valgrind deps
@@ -86,20 +84,20 @@ source=(
   https://mesa.freedesktop.org/archive/mesa-${pkgver}.tar.xz{,.sig}
 )
 validpgpkeys=(
-  '8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D'  # Emil Velikov <emil.l.velikov@gmail.com>
-  '946D09B5E4C9845E63075FF1D961C596A7203456'  # Andres Gomez <tanty@igalia.com>
-  'E3E8F480C52ADD73B278EE78E1ECBE07D7D70895'  # Juan Antonio Suárez Romero (Igalia, S.L.) <jasuarez@igalia.com>
-  'A5CC9FEC93F2F837CB044912336909B6B25FADFA'  # Juan A. Suarez Romero <jasuarez@igalia.com>
-  '71C4B75620BC75708B4BDB254C95FAAB3EB073EC'  # Dylan Baker <dylan@pnwbakers.com>
-  '57551DE15B968F6341C248F68D8E31AFC32428A6'  # Eric Engestrom <eric@engestrom.ch>
+  '8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D' # Emil Velikov <emil.l.velikov@gmail.com>
+  '946D09B5E4C9845E63075FF1D961C596A7203456' # Andres Gomez <tanty@igalia.com>
+  'E3E8F480C52ADD73B278EE78E1ECBE07D7D70895' # Juan Antonio Suárez Romero (Igalia, S.L.) <jasuarez@igalia.com>
+  'A5CC9FEC93F2F837CB044912336909B6B25FADFA' # Juan A. Suarez Romero <jasuarez@igalia.com>
+  '71C4B75620BC75708B4BDB254C95FAAB3EB073EC' # Dylan Baker <dylan@pnwbakers.com>
+  '57551DE15B968F6341C248F68D8E31AFC32428A6' # Eric Engestrom <eric@engestrom.ch>
 )
 
 # Rust crates for NVK, used as Meson subprojects
 declare -A _crates=(
-   proc-macro2 1.0.70
-   quote 1.0.33
-   syn 2.0.39
-   unicode-ident 1.0.12
+  proc-macro2 1.0.70
+  quote 1.0.33
+  syn 2.0.39
+  unicode-ident 1.0.12
 )
 
 for _crate in "${!_crates[@]}"; do
@@ -107,17 +105,17 @@ for _crate in "${!_crates[@]}"; do
 done
 
 sha256sums=('7454425f1ed4a6f1b5b107e1672b30c88b22ea0efea000ae2c7d96db93f6c26a'
-            'SKIP'
-            '39278fbbf5fb4f646ce651690877f89d1c5811a3d4acb27700c1cb3cdb78fd3b'
-            '3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b'
-            '5267fca4496028628a95160fc423a33e8b2e6af8a5302579e322e4b520293cae'
-            '23e78b90f2fcf45d3e842032ce32e3f2d1545ba6636271dcbf24fa306d87be7a')
+  'SKIP'
+  '39278fbbf5fb4f646ce651690877f89d1c5811a3d4acb27700c1cb3cdb78fd3b'
+  '3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b'
+  '5267fca4496028628a95160fc423a33e8b2e6af8a5302579e322e4b520293cae'
+  '23e78b90f2fcf45d3e842032ce32e3f2d1545ba6636271dcbf24fa306d87be7a')
 b2sums=('d9438e533b471445b2403e01e1fd593d83c0013b0991585f718122f1cadc6ac6bb1fb913f0fb257354ae21ddd9fe1f970ad9ac46f05d756c223ed56a11b9c9ce'
-        'SKIP'
-        'fff0dec06b21e391783cc136790238acb783780eaedcf14875a350e7ceb46fdc100c8b9e3f09fb7f4c2196c25d4c6b61e574c0dad762d94533b628faab68cf5c'
-        '4cede03c08758ccd6bf53a0d0057d7542dfdd0c93d342e89f3b90460be85518a9fd24958d8b1da2b5a09b5ddbee8a4263982194158e171c2bba3e394d88d6dac'
-        '77c4b166f1200e1ee2ab94a5014acd334c1fe4b7d72851d73768d491c56c6779a0882a304c1f30c88732a6168351f0f786b10516ae537cff993892a749175848'
-        '2cff6626624d03f70f1662af45a8644c28a9f92e2dfe38999bef3ba4a4c1ce825ae598277e9cb7abd5585eebfb17b239effc8d0bbf1c6ac196499f0d288e5e01')
+  'SKIP'
+  'fff0dec06b21e391783cc136790238acb783780eaedcf14875a350e7ceb46fdc100c8b9e3f09fb7f4c2196c25d4c6b61e574c0dad762d94533b628faab68cf5c'
+  '4cede03c08758ccd6bf53a0d0057d7542dfdd0c93d342e89f3b90460be85518a9fd24958d8b1da2b5a09b5ddbee8a4263982194158e171c2bba3e394d88d6dac'
+  '77c4b166f1200e1ee2ab94a5014acd334c1fe4b7d72851d73768d491c56c6779a0882a304c1f30c88732a6168351f0f786b10516ae537cff993892a749175848'
+  '2cff6626624d03f70f1662af45a8644c28a9f92e2dfe38999bef3ba4a4c1ce825ae598277e9cb7abd5585eebfb17b239effc8d0bbf1c6ac196499f0d288e5e01')
 
 prepare() {
   cd mesa-$pkgver
@@ -140,7 +138,6 @@ build() {
     -D gallium-rusticl=true
     -D gallium-vdpau=disabled
     -D gallium-xa=disabled
-    -D gbm=disabled
     -D gles1=disabled
     -D glvnd=true
     -D glx=dri
@@ -190,7 +187,6 @@ package_vulkan-mesa-layers() {
     'glibc'
     'libdrm'
     'libxcb'
-    #'wayland'
 
     'python'
   )
@@ -258,58 +254,6 @@ package_opencl-rusticl-mesa() {
 
   _install fakeinstall/etc/OpenCL/vendors/rusticl.icd
   _install fakeinstall/$_libdir/libRusticlOpenCL*
-
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
-}
-
-package_vulkan-intel() {
-  pkgdesc="Open-source Vulkan driver for Intel GPUs"
-  depends=(
-    'expat'
-    'gcc-libs'
-    'glibc'
-    'libdrm'
-    'libx11'
-    'libxcb'
-    'libxshmfence'
-    'systemd-libs'
-    'vulkan-icd-loader'
-    #'wayland'
-    'xcb-util-keysyms'
-    'zlib'
-    'zstd'
-  )
-  optdepends=('vulkan-mesa-layers: additional vulkan layers')
-  provides=('vulkan-driver')
-
-  _install fakeinstall/usr/share/vulkan/icd.d/intel_*.json
-  _install fakeinstall/$_libdir/libvulkan_intel*.so
-
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
-}
-
-package_vulkan-nouveau() {
-  pkgdesc="Open-source Vulkan driver for Nvidia GPUs"
-  depends=(
-    'expat'
-    'gcc-libs'
-    'glibc'
-    'libdrm'
-    'libx11'
-    'libxcb'
-    'libxshmfence'
-    'systemd-libs'
-    'vulkan-icd-loader'
-    'wayland'
-    'xcb-util-keysyms'
-    'zlib'
-    'zstd'
-  )
-  optdepends=('vulkan-mesa-layers: additional vulkan layers')
-  provides=('vulkan-driver')
-
-  _install fakeinstall/usr/share/vulkan/icd.d/nouveau_*.json
-  _install fakeinstall/$_libdir/libvulkan_nouveau*.so
 
   install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
@@ -482,9 +426,8 @@ package_mesa() {
 
   _install fakeinstall/$_libdir/bellagio
   _install fakeinstall/$_libdir/d3d
-  _install fakeinstall/$_libdir/libglapi.so*
+  _install fakeinstall/$_libdir/lib{gbm,glapi}.so*
   _install fakeinstall/$_libdir/libOSMesa.so*
-  #  _install fakeinstall/$_libdir/libxatracker.so*
 
   _install fakeinstall/usr/include
   _install fakeinstall/$_libdir/pkgconfig
